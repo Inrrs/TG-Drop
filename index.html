@@ -137,10 +137,44 @@
         [data-theme="dark"] a:hover {
             color: #c084fc;
         }
+		
+		/* 添加密码访问 */
+		#password-protect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #password-input {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        #password-input input {
+            margin-top: 10px;
+        }
     </style>
 </head>
 
 <body>
+	<!-- 密码保护层 -->
+    <div id="password-protect">
+        <div id="password-input">
+            <h2>请输入密码</h2>
+            <input type="password" id="password" placeholder="输入密码">
+            <button onclick="checkPassword()">提交</button>
+        </div>
+    </div>
+	
     <div class="container">
         <header>
             <h1>Cinrrs的TG中转站</h1>
@@ -246,5 +280,18 @@
     </button>
 		        <div class="header-buttons">
             </div>
+			
+	    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            const correctPassword = 'test'; // 替换为实际的密码
+            if (password === correctPassword) {
+                document.getElementById('password-protect').style.display = 'none';
+                document.querySelector('.container').style.display = 'block';
+            } else {
+                alert('密码错误，请重试');
+            }
+        }
+    </script>
 </body>
 </html>
