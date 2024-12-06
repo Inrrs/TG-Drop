@@ -47,7 +47,6 @@
             background: rgba(0, 0, 0, 0.8) !important;
         }
 
-        /* 返回顶部按钮样式 */
         .back-to-top {
             position: fixed;
             right: 20px;
@@ -117,8 +116,6 @@
                 height: 35px;
             }
         }
-
-        /* 添加链接样式 */
         a {
             color: #9333ea;
             text-decoration: none;
@@ -138,7 +135,7 @@
             color: #c084fc;
         }
 		
-		/* 添加密码访问 */
+
 		#password-protect {
             position: fixed;
             top: 0;
@@ -166,7 +163,6 @@
 </head>
 
 <body>
-	<!-- 密码保护层 -->
     <div id="password-protect">
         <div id="password-input">
             <h2>请输入密码</h2>
@@ -190,7 +186,6 @@
         </header>
 
         <main id="content-container">
-            <!-- 初始骨架屏 -->
             <section class="text-block skeleton">
                 <div class="text-block-header">
                     <div class="skeleton-title"></div>
@@ -225,8 +220,6 @@
                 </div>
             </section>
         </main>
-
-        <!-- 编辑模态框 -->
         <div id="editModal" class="modal">
             <div class="modal-content">
                 <h2>编辑内容</h2>
@@ -268,28 +261,24 @@
             </div>
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
     <script src="js/main.js"></script>
-	
-    <!-- 返回顶部按钮 -->
     <button class="back-to-top" aria-label="返回顶部" title="返回顶部">
         <svg viewBox="0 0 24 24">
             <path d="M12 4l-8 8h6v8h4v-8h6z" />
         </svg>
     </button>
 		        <div class="header-buttons">
-            </div>
-			
+            </div>	
 	    <script>
         function checkPassword() {
             const password = document.getElementById('password').value;
-            const correctPassword = 'WCinrrs'; // 替换为实际的密码
+            const correctPassword = 'WCinrrs'; 
             if (password === correctPassword) {
                 document.getElementById('password-protect').style.display = 'none';
                 document.querySelector('.container').style.display = 'block';
             } else {
-                alert('密码错误，请重试');
+                alert('Password error, please try again');
             }
         }
     </script>
